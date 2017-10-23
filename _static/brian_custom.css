@@ -1,0 +1,39 @@
+.section:before {
+  display: block;
+  content: " ";
+  margin-top: -53px; /* or if you have a non-hardcoded way to refer to the height of the nav */
+  height: 53px;
+  visibility: hidden;
+}
+
+/* We don't want red borders warning students they haven't saved, because
+  we've disabled saving. */
+.CodeMirror.cm-s-default {
+  border-top: none!important;
+  border-bottom: none!important;
+}
+
+.ac_editor_container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.ac_output pre.ac-code-changed {
+  background: initial;
+  animation: flash-background 1s;
+}
+@keyframes flash-background {
+  0% {
+    background: rgba(255, 255, 0, 0.3);
+  }
+  100% {
+    background: initial;
+  }
+}
+
+body {
+  /* The next/prev page links are absolutely positioned to 95px
+  above the bottom of the body, so they disappear if the body is
+  too short. */
+  min-height: 300px;
+}
